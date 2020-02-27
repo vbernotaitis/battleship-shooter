@@ -1,7 +1,7 @@
 # BattleShip Shooter
 
 Interface that should be implemented:
-```
+```csharp
 public interface IBattleShipShooter
 {
     /// <summary>
@@ -39,7 +39,7 @@ public interface IBattleShipShooter
 ```
 
 Example:
-```
+```csharp
 public class BattleShipShooterExample : IBattleShipShooter
 {
     public string CaptainName { get; set; } = "John";
@@ -63,7 +63,17 @@ public class BattleShipShooterExample : IBattleShipShooter
 
     public Coordinates Shoot()
     {
-        return new Coordinates('A', 1);
+        var random = new System.Random();
+        var validCoordinatesExamples = new[]
+        {
+            // Coordinates can be defined by two formats as can be seen from examples above,
+            // however, under the hood everything is operated in integers from 0 to 9
+            new Coordinates(0, 0),
+            new Coordinates('J', 1),
+            new Coordinates('A', 10),
+            new Coordinates(9, 9)
+        };
+        return validCoordinatesExamples[random.Next(0, validCoordinatesExamples.Length)];
     }
 
     public void ReportLastShotResult(Coordinates coordinates, ShotResult result)
@@ -74,4 +84,9 @@ public class BattleShipShooterExample : IBattleShipShooter
     {
     }
 }
+```
+
+NuGet Package:
+```
+Install-Package Koditus.BattleShipBoard.Interfaces -Version 1.0.0
 ```
