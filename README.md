@@ -63,7 +63,17 @@ public class BattleShipShooterExample : IBattleShipShooter
 
     public Coordinates Shoot()
     {
-        return new Coordinates('A', 1);
+        var random = new System.Random();
+        var validCoordinatesExamples = new[]
+        {
+            // Coordinates can be defined by two formats as can be seen from examples above,
+            // however, under the hood everything is operated in integers from 0 to 9
+            new Coordinates(0, 0),
+            new Coordinates('J', 1),
+            new Coordinates('A', 10),
+            new Coordinates(9, 9)
+        };
+        return validCoordinatesExamples[random.Next(0, validCoordinatesExamples.Length)];
     }
 
     public void ReportLastShotResult(Coordinates coordinates, ShotResult result)
