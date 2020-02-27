@@ -40,6 +40,7 @@ public interface IBattleShipShooter
 
 Example:
 ```
+public class BattleShipShooterExample : IBattleShipShooter
 {
     public string CaptainName { get; set; } = "John";
 
