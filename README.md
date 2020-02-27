@@ -1,7 +1,7 @@
 # BattleShip Shooter
 
 Interface that should be implemented:
-```
+```csharp
 public interface IBattleShipShooter
 {
     /// <summary>
@@ -39,7 +39,7 @@ public interface IBattleShipShooter
 ```
 
 Example:
-```
+```csharp
 public class BattleShipShooterExample : IBattleShipShooter
 {
     public string CaptainName { get; set; } = "John";
@@ -76,8 +76,7 @@ public class BattleShipShooterExample : IBattleShipShooter
 }
 ```
 
-Nuget Package:
+NuGet Package:
 ```
 Install-Package Koditus.BattleShipBoard.Interfaces -Version 1.0.0
 ```
-https://www.nuget.org/packages/Koditus.BattleShipBoard.Interfaces/1.0.0
