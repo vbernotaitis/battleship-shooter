@@ -88,5 +88,5 @@ public class BattleShipShooterExample : IBattleShipShooter
 
 NuGet Package:
 ```
-Install-Package Koditus.BattleShipBoard.Interfaces -Version 1.0.0
+Install-Package Koditus.BattleShipBoard.Interfaces -Version 1.0.1
 ```
